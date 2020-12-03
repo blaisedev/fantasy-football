@@ -33,7 +33,7 @@ workflows:
         publishing:
             email:
                 recipients:
-                    - bdevaney'acquisbi.com
+                    - bdevaney@acquisbi.com
                 notify:
                     success: true
                     failure: true
