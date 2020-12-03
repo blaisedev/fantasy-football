@@ -18,8 +18,8 @@ workflows:
                 - pull_request
             branch_patterns:
                 - pattern: master
-                include: true
-                source: true
+                  include: true
+                  source: true
         scripts:
             - xcodebuild build -project "$XCODE_PROJECT" -scheme "$XCODE_SCHEME" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
         artifacts:
