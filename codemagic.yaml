@@ -22,7 +22,7 @@ workflows:
                   source: true
         scripts:
             - |
-            # build iOS
+                # build iOS
                 cd ios
                 pod install
                 xcode-project build-ipa --project "$XCODE_PROJECT" --scheme "$XCODE_SCHEME"
