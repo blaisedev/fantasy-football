@@ -6,8 +6,8 @@ workflows:
         name: iOS Workflow
         environment:
             vars:
-                XCODE_PROJECT: "footballfantasy.xcodeproj"  # YOUR WORKSPACE NAME HERE
-                XCODE_SCHEME: "footballfantasy" # THE NAME OF YOUR SCHEME HERE
+                XCODE_PROJECT: "footballfantasy.xcodeproj"
+                XCODE_SCHEME: "footballfantasy"
             node: latest
             xcode: latest
             cocoapods: default
@@ -21,7 +21,7 @@ workflows:
                   include: true
                   source: true
         scripts:
-            - xcodebuild build --project "$XCODE_PROJECT" --scheme "$XCODE_SCHEME" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
+            - xcodebuild build -project "$XCODE_PROJECT" -scheme "$XCODE_SCHEME" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO CODE_SIGNING_ALLOWED=NO
         artifacts:
             - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.app
             - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
