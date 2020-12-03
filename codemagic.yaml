@@ -8,9 +8,9 @@ workflows:
             vars:
                 XCODE_PROJECT: "footballfantasy.xcodeproj"  # YOUR WORKSPACE NAME HERE
                 XCODE_SCHEME: "footballfantasy" # THE NAME OF YOUR SCHEME HERE
-                node: latest
-                xcode: latest
-                cocoapods: default
+            node: latest
+            xcode: latest
+            cocoapods: default
         triggering:
             events:
                 - push
