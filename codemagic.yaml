@@ -23,9 +23,9 @@ workflows:
         scripts:
             - |
             # build iOS
-            cd ios
-            pod install
-            xcode-project build-ipa --project "$XCODE_PROJECT" --scheme "$XCODE_SCHEME"
+                cd ios
+                pod install
+                xcode-project build-ipa --project "$XCODE_PROJECT" --scheme "$XCODE_SCHEME"
         artifacts:
             - build/ios/ipa*.ipa
             - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
