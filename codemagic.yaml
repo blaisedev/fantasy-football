@@ -28,7 +28,7 @@ workflows:
                 pod install
                 xcode-project build-ipa --project "$XCODE_PROJECT" --scheme "$XCODE_SCHEME"
         artifacts:
-            - build/ios/ipa*.ipa
+            - build/ios/ipa/*.ipa
             - $HOME/Library/Developer/Xcode/DerivedData/**/Build/**/*.dSYM
         publishing:
             email:
