@@ -21,6 +21,7 @@ workflows:
                   include: true
                   source: true
         scripts:
+            - npm install
             - |
                 # build iOS
                 cd ios
