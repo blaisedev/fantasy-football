@@ -152,6 +152,14 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
+        release {
+            if (System.getenv()["CI"]) { // CI=true is exported by Codemagic
+                storeFile file('/tmp/keystore.keystore')
+                storePassword System.getenv()['FF_KEYSTORE_PASSWORD']
+                keyAlias System.getenv()['FF_KEY_ALIAS_USERNAME']
+                keyPassword System.getenv()['FF_KEY_ALIAS_PASSWORD']
+            }
+        }
     }
     buildTypes {
         debug {
@@ -160,7 +168,7 @@ android {
         release {
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
-            signingConfig signingConfigs.debug
+            signingConfig signingConfigs.release
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }

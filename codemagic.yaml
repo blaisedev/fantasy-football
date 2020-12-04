@@ -27,7 +27,7 @@ workflows:
             - name: Set Android sdk location
               script: |
                   echo "sdk.dir=$HOME/programs/android-sdk-macosx" > "$FCI_BUILD_DIR/android/local.properties"
-            - name: Set Android sdk location
+            - name: Set up Keystore
               script: |
                     echo $FF_KEYSTORE | base64 --decode > /tmp/keystore.keystore
                     cat >> "$FCI_BUILD_DIR/project_directory/android/key.properties" <<EOF
