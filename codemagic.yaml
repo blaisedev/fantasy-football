@@ -41,7 +41,8 @@ workflows:
                 cd android
                 ./gradlew assembleRelease
         artifacts:
-            - android/app/build/outputs/**/*.abb
+            - android/app/build/outputs/**/*.apk
+            - build/**/outputs/**/*.abb
         publishing:
             email:
                 recipients:
